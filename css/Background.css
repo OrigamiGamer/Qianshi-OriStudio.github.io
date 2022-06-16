@@ -1,0 +1,123 @@
+*{
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+html{
+	font-family: Segoe UI,Microsoft YaHei;
+	font-size: 25px;
+	color: rgb(255,255,255);
+
+	background: url(https://api.sunweihu.com/api/bing1/api.php) center center fixed ;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+BigTitle{
+	font-family: Segoe UI,Microsoft YaHei;
+	color: rgb(255,255,255);
+
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:700px;
+	height:100px;
+	margin-left:-350px;
+	margin-top:-50px;
+}
+BottomA{
+	position: relative;
+	left: -50px;
+}
+a{
+	text-decoration: none;
+}
+a:link{
+	color: rgb(28, 126, 214);
+}
+a:visited{
+	color: rgb(255,255,255);
+}
+a:hover{
+	color: rgb(28, 126, 214);
+}
+a:active{
+	color: rgb(255,255,255);
+}
+.child{
+	margin-top: -10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-position: top;
+	border-color: rgba(0, 0, 0, 0);
+	border-style: solid;
+	border-radius: 10px;
+}
+hr{
+	display: none;
+}
+.EasingOut{
+	transform:  translateX(-125%);
+}
+#Main-LeftTab{
+	position: fixed;
+	left: 0px;
+	top: 40px;
+	width: 160px;
+	height: 100%;
+	background-color: rgba(33, 33, 33, 0.5);
+	font-family: Segoe MDL2 Assets;
+	/* border-radius: 25px; */
+	transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
+}
+#Main-LeftTab ul{
+	margin: 12.5px 0;
+	padding: 0;
+	text-align: center;
+	list-style-type: none;
+}
+#li-ReadMe {
+	/* Center */
+	position: fixed;
+	display: inline-block;
+	left: 25%;
+	top: 25%;
+	width: 50%;
+	height: 50%;
+	font-size: 0;
+	color: white;
+	background-color: rgba(33, 33, 33, 0.5);
+	box-shadow: 20px 20px 0px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 32px;
+}
+#li-ReadMe-Name{
+	top: 0px;
+	width: 256px;
+	font-size: 12px;
+
+}
+.FOF {
+	opacity: 1;
+}
+.FOF.FO {
+  	-webkit-transition: all 1s;  
+  	-moz-transition: all 1s;  
+	-ms-transition: all 1s;  
+	-o-transition: all 1s;  
+	transition: all 1s;  
+	opacity: 0;
+}
+.FIF {
+	opacity: 0;
+}
+.FIF.FI {
+  	-webkit-transition: all 1s;  
+  	-moz-transition: all 1s;  
+	-ms-transition: all 1s;  
+	-o-transition: all 1s;  
+	transition: all 1s;  
+	opacity: 1;
+}
