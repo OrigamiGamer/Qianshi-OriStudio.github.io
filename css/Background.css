@@ -16,7 +16,7 @@ html{
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-BigTitle{
+#ClientDiv-Center-Banner{
 	font-family: Segoe UI,Microsoft YaHei;
 	color: rgb(255,255,255);
 
@@ -29,9 +29,8 @@ BigTitle{
 	margin-left:-350px;
 	margin-top:-50px;
 }
-BottomA{
-	position: relative;
-	left: -50px;
+#ClientDiv-Center-ExChangeLink{
+
 }
 a{
 	text-decoration: none;
@@ -48,19 +47,17 @@ a:hover{
 a:active{
 	color: rgb(255,255,255);
 }
-.child{
-	margin-top: -10px;
-	background-color: rgba(0, 0, 0, 0.5);
-	background-position: top;
-	border-color: rgba(0, 0, 0, 0);
-	border-style: solid;
-	border-radius: 10px;
-}
 hr{
 	display: none;
 }
-.EasingOut{
+.EasingOut_Left{
 	transform:  translateX(-125%);
+}
+.EasingOut_Bottom{
+	transform:  translateY(125%);
+}
+.EasingOut_Top{
+	transform:  translateY(-250%);
 }
 #Main-LeftTab{
 	position: fixed;
@@ -73,7 +70,7 @@ hr{
 	/* border-radius: 25px; */
 	transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
 }
-#Main-LeftTab ul{
+ul{
 	margin: 12.5px 0;
 	padding: 0;
 	text-align: center;

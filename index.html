@@ -1,42 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/background.css">
-		<title>Creakler's Blog</title>
-	</head>
-	<body style="min-height: 100%;">
-		<center>Creakler's Blog</center>
-		<BigTitle id="Top" style="max-height: 10%;">
-			<center>
-				<div style="font-size: 28px;">
-					<br>
-						We should study as youngest ,We must study as now .
-					</br>
-				</div>
-			</center>
-		</BigTitle>
-	</body>
-	<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
-		<font size="2px">
-		<a style="position:relative;left: -50%;" href="https://origamiyes.freeflarum.com/">OrigamiStudio</a><br>
-		<a style="position:relative;left: -50%;" href="">友情链接</a><br>
-		<a style="position:relative;left: -50%;" href="">Powered By Creakler</p>
-		</font>
-	</center>
-</html>
--->
-
-
-
-
-<!-- 
-	这下列的 script 为专为 freeflarum 用的,若你禁用了 JavaScript 那么此 script 就会失效！
-
--->
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -45,21 +6,19 @@
 		<meta copyright="Powerd By Creakler">
 		<link rel="stylesheet" href="./css/Background.css">
 		<title>Creakler's Blog</title>
-<!--		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script type="text/javascript">
-			function Bili_GetUserHeadImage (mid){
-				var xhr = new XMLHttpRequest()
-				xhr.open('get','https://api.bilibili.com/x/space/acc/info?mid='+mid+'&callback=__JSONP',true)
-				xhr.send(null)
-					function __JSONP(data){
-						console.log (data);
-					}
-				/*$.getJSON ('https://api.bilibili.com/x/space/acc/info?mid='+mid+'&callback=?',function(JsonData){
-					console.log(JsonData)
-				})*/
-			}
-		</script>					-->
         <script type="text/javascript">
+        	window.onload = function(){
+        		var windowHeight = 0;
+				if (window.innerHeight){
+					windowHeight = window.innerHeight;
+				}else if ((document.body) && (document.body.clientHeight)){
+					windowHeight = document.body.clientHeight;
+				}
+				var html = document.getElementsByTagName('html')[0];
+				if(document.body.offsetHeight < windowHeight){
+				html.style.height = windowHeight;
+				};
+        	}
 			var os = function() {
   				var ua = navigator.userAgent, //获取浏览器UA
  				isWindowsPhone = /(?:Windows Phone)/.test(ua),
@@ -78,53 +37,30 @@
 				};
 			}();
 			// --------------------------------------------------------------
-/*        	window.onload=function(){
-        		document.querySelectorAll("p").forEach((v) => v.remove())
-        		var ele = document.getElementById("app")
-        		ele.parentNode.removeChild(ele)
-        	}
-        	Bili_GetUserHeadImage(1)
-			console.log("/// Success ///")
-        	console.log("///Js Loaded///")                                     */
         	if (!os.isPc)
 				confirm("Warn!\nYour Device Maybe Will Make You strange. ")
-        	</script>
-        	<!--
-        		ok啊这里的Script修改非常有缺陷的，会删除所有 p 标签以及id含 "app" 的 Element 。
-       		-->     		
+        </script>	
 	</head>
-	<body style="min-height: 100%;">
 		<div id="Main-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 40px;background-color: rgba(33, 33, 33, 0.9);">
 			<script>
 				function LogoOnClick(){
 					MainLeftTab = document.getElementById("Main-LeftTab")
-					MainLeftTab.className = MainLeftTab.className != "EasingOut"?"EasingOut":"";
+					MainLeftTab.className = MainLeftTab.className != "EasingOut_Left"?"EasingOut_Left":"";
 				}
 			</script>
-			<img src="https://creaklerblog.freeflarum.com/assets/favicon-spktdt5k.png" οndragstart="return false;" style="position: relative; border-radius: 0px 0px 8px 0px;width: 100%height;height: 100%; " onclick="LogoOnClick();return false;" ondragstart="return false;" >
+			<img src="./img/x100.jpg" style="position: relative; border-radius: 0px 0px 8px 0px;width: 40px;height: 40px; " onclick="LogoOnClick();return false;">
 		</div>
-		<ClientDiv>
-			<BigTitle id="Top" style="max-height: 10%;">
-				<center>
-					<div style="font-size: 28px;">
-						<div id="Title">
-							We should study as youngest ,We must study as now .
-						</div>
-						<div id="ExchangeLink" style="display: none;" >
-							<ChildOne class="child">
-								<img src="https://www.aurorast.tk/img/favicon.png" width="48px" height="48px "style="border-radius: 50%;">
-								<a href="https://www.aurorast.tk/">AuroraStudio</a>
-							</ChildOne>
-							&nbsp
-							<ChildTwo class="child">
-								<img src="https://www.aurorast.tk/img/favicon.png" width="48px" height="48px "style="border-radius: 50%;">
-								<a href="https://origami.rth7.com/">Origami's Blog</a>
-							</ChildTwo>
-						</div>
-					</div>
-				</center>
-			</BigTitle>
-			<div id="Main-LeftTab" class="EasingOut">
+		<ClientDiv style="min-height: 100%vh;">
+			<center style="max-height: 10%;font-size: 28px;">
+				<p id="ClientDiv-Center-Banner" class="FIF FI">We should study as youngest ,We must study as now .
+			</center>
+			<div id="ClientDiv-Center-ExChangeLink" class="FOF FO">
+				<ul>
+					<li><img src="https://www.aurorast.tk/img/favicon.png" width="48px" height="48px "style="border-radius: 50%;"><a href="https://www.aurorast.tk/">AuroraStudio</a></li>
+					<li><img src="https://www.aurorast.tk/img/favicon.png" width="48px" height="48px "style="border-radius: 50%;"><a href="https://origamigamer.github.io/">Origami's Blog</a></li>
+				</ul>
+			</div>
+			<div id="Main-LeftTab" class="EasingOut_Left">
 				<script>
 					function OnReadMeClick(){
 						var ReadMe = document.getElementById("li-ReadMe")
@@ -136,26 +72,25 @@
 					<li><a onclick="OnReadMeClick()">&#xE13D Read Me</a></li>
 				</ul>
 			</div>
-			<div id="li-ReadMe">
+			<div id="li-ReadMe" class="FOF FO">
 				<div id="li-ReadMe-MainTitle" style="max-height: 64px;width: 100%;">
 					<div id="li-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 32px;max-width: 64px;height: 64px;"></div>
 					<div id="li-ReadMe-Name">千矢 - QianShi</div>
 				</div>
 			</div>
 		</ClientDiv>
-	</body>
 	<script>
 		function Js_ExchangeLink(){
-			var l_Title = document.getElementById("Title")
-			var l_div = document.getElementById("ExchangeLink")
-			l_Title.style.display = l_Title.style.display != "none"?"none":"inline";
-			l_div.style.display = l_div.style.display != "none"?"none":"inline";
+			var l_Title = document.getElementById("ClientDiv-Center-Banner")
+			var l_div = document.getElementById("ClientDiv-Center-ExChangeLink")
+			l_Title.className = l_Title.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
+			l_div.className = l_div.className != "FOF FO"?"FOF FO":"FIF FI";
 		}
 	</script>
 	<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
 		<font size="2px">
 		<a style="position:relative;left: -50%;" href="https://origamiyes.freeflarum.com/">OrigamiStudio</a><br>
-		<a style="position:relative;left: -50%;" href="" onclick="Js_ExchangeLink();return false ;">友情链接</a><br>
+		<a style="position:relative;left: -50%;" onclick="Js_ExchangeLink();return false ;">友情链接</a><br>
 		<a style="position:relative;left: -50%;" href="">Powered By Creakler</p>
 		</font>
 	</center>
