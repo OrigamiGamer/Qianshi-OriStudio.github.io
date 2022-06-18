@@ -17,6 +17,17 @@
 		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
+			function li_ReadMe_Left_Info_Init(){
+				if (os.isPc) {
+						Type = 'PC';
+					} else {
+						Type = 'Mobile';
+					};
+					// console.log(Type)
+					var Type = 'li-ReadMe-li-TencentQQ-' + Type
+					var a = document.getElementById(Type);
+					a.style.display = a.style.display!="block"?"block":"none";
+				}
         	window.onload = function(){
         		var windowHeight = 0;
 				if (window.innerHeight){
@@ -28,10 +39,14 @@
 				if(document.body.offsetHeight < windowHeight){
 				html.style.height = windowHeight;
 				};			
-				document.getElementById('ClientDiv-Center-Banner').innerHTML = ;
+				document.getElementById('ClientDiv-Center-Banner').innerHTML = '嗨~别来无恙啊!';
+				li_ReadMe_Left_Info_Init()
+				OutPutAboutMe()
         	}
+        </script>
+        <script type="text/javascript">
         	// Get BrowserUA -----------------------------------------------
-			var os = function() {
+			os = function() {
   				var ua = navigator.userAgent, //获取浏览器UA
  				isWindowsPhone = /(?:Windows Phone)/.test(ua),
 				isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
@@ -49,8 +64,10 @@
 				};
 			}();
 			// --------------------------------------------------------------
-        	if (!os.isPc)
-				confirm("Warn!\nYour Device Maybe Will Make You strange. ")</script>	
+        	if (!os.isPc){
+				// confirm("Warn!\nYour Device Maybe Will Make You strange. ")
+        	}
+		</script>	
 	</head>
 		<div id="Main-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
 			<script>
@@ -65,21 +82,13 @@
 			<center style="max-height: 10%;font-size: 28px;">
 				<p id="ClientDiv-Center-Banner" class="FIF FI">
 			</center>
-			<center id="ClientDiv-Center-ExChangeLink" class="FOF FO EasingOut_Bottom">
-				<ul>
-					<li>
-						<img src="https://www.aurorast.tk/img/favicon.png" width="32px" height="32px "style="border-radius: 50%;">
-						<a href="https://www.aurorast.tk/">AuroraStudio</a>
-					</li>
-					<li>
-						<img src="" width="32px" height="32px "style="border-radius: 50%;">
-						<a href="https://origamigamer.github.io/">Origami's Blog</a>
-					</li>
-				</ul>
-			</center>
 			<div id="Main-LeftTab" class="EasingOut_Left">
 				<script>
 					function OnReadMeClick(){
+						var nul = document.getElementById('ClientDiv-Center-ExChangeLink')
+						if(nul.className=='FIF FI'){
+							Js_ExchangeLink()
+						}
 						var ReadMe = document.getElementById("li-ReadMe")
 						/* ReadMe.style.display = ReadMe.style.display != "none"?"none":"inline"; */
 						ReadMe.className = ReadMe.className != "FOF FO"?"FOF FO":"FIF FI"
@@ -90,25 +99,51 @@
 				</ul>
 			</div>
 			<div id="li-ReadMe" class="FOF FO">
-				<div id="li-ReadMe-MainTitle" style="max-height: 64px;width: 100%;">
-					<div id="li-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 32px;max-width: 64px;height: 64px;"></div>
+				<div id="li-ReadMe-LeftInfo">
+					<div id="li-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 64px;max-width: 128px;height: 128px;"></div>
 					<div id="li-ReadMe-Name">千矢 - QianShi</div>
+					<div id="li-ReadMe-SplitBar"></div>
+					<ul style="font-size: 18px;">
+						<li>
+							<a href="https://space.bilibili.com/439946965">Bilibili
+						</li>
+						<li>
+							<a id="li-ReadMe-li-TencentQQ-PC" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2937396379" style="display: none;">TencentQQ - PC</a>
+							<a id="li-ReadMe-li-TencentQQ-Mobile" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2937396379&amp;site=qq&amp;menu=yes" style="display: none;">TencentQQ - Mobile</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</ClientDiv>
-	<script>
-		function Js_ExchangeLink(){
-			var l_Title = document.getElementById("ClientDiv-Center-Banner")
-			var l_div = document.getElementById("ClientDiv-Center-ExChangeLink")
-			l_Title.className = l_Title.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
-			l_div.className = l_div.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
-		}
-	</script>
-	<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
-		<font size="2px">
-		<a style="position:relative;left: -50%;" href="https://origamigamer.github.io/index.html/">OrigamiStudio</a><br>
-		<a style="position:relative;left: -50%;" onclick="Js_ExchangeLink();return false ;">友情链接</a><br>
-		<a style="position:relative;left: -50%;" href="">Powered By Creakler</p>
-		</font>
-	</center>
+			<script>
+				function Js_ExchangeLink(){
+				var nul = document.getElementById('li-ReadMe')
+				if(nul.className=='FIF FI'){
+					OnReadMeClick()
+					}
+				var l_Title = document.getElementById("ClientDiv-Center-Banner")
+				var l_div = document.getElementById("ClientDiv-Center-ExChangeLink")
+				l_Title.className = l_Title.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
+				l_div.className = l_div.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
+			}
+		</script>
+		<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
+			<font size="2px">
+			<a style="position:relative;left: -50%;" href="https://origamigamer.github.io/index.html/">OrigamiStudio</a><br>
+			<a style="position:relative;left: -50%;" onclick="Js_ExchangeLink();return false ;">友情链接</a><br>
+			<a style="position:relative;left: -50%;" href="">Powered By Creakler</p>
+			</font>
+		</center>
+		<center id="ClientDiv-Center-ExChangeLink" class="FOF FO EasingOut_Bottom">
+			<ul>
+				<li>
+					<img src="https://www.aurorast.tk/img/favicon.png" width="32px" height="32px "style="border-radius: 50%;">
+						<a href="https://www.aurorast.tk/">AuroraStudio</a>
+				</li>
+				<li>
+					<img src="" width="32px" height="32px "style="border-radius: 50%;">
+					<a href="https://origamigamer.github.io/">Origami's Blog</a>
+				</li>
+			</ul>
+		</center>
+	</ClientDiv>
 </html>
