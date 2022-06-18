@@ -25,12 +25,19 @@ html{
 	left: 50%;
 	top: 50%;
 	width:700px;
-	height:100px;
+	height:25px;
 	margin-left:-350px;
 	margin-top:-50px;
 }
 #ClientDiv-Center-ExChangeLink{
-
+	font-size: 26px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width:700px;
+	height:15%;
+	margin-left:-350px;
+	margin-top:-50px;
 }
 a{
 	text-decoration: none;
@@ -57,12 +64,12 @@ hr{
 	transform:  translateY(125%);
 }
 .EasingOut_Top{
-	transform:  translateY(-250%);
+	transform:  translateY(-125%);
 }
 #Main-LeftTab{
 	position: fixed;
 	left: 0px;
-	top: 40px;
+	top: 64px;
 	width: 160px;
 	height: 100%;
 	background-color: rgba(33, 33, 33, 0.5);

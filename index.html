@@ -2,10 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta copyright="Powerd By Creakler">
+		<meta http-equiv=”Window-target” content=”_top”>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<link rel="shortcut icon" href="./img/favicon.png">
+		<link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="application-name" content="Qianshi-OrigamiStudio_Blogs">
+		<meta name="author" content="By Qianshi-Creakler">
+		<meta name="ketwords" content="Blog,OrigamiStudio">
+		<meta name="description" content="This a Creakler's Blog">
+		<meta name="copyright" content="Powerd By Creakler">
 		<link rel="stylesheet" href="./css/Background.css">
 		<title>Creakler's Blog</title>
+		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
         <script type="text/javascript">
         	window.onload = function(){
         		var windowHeight = 0;
@@ -38,28 +47,33 @@
 			}();
 			// --------------------------------------------------------------
         	if (!os.isPc)
-				confirm("Warn!\nYour Device Maybe Will Make You strange. ")
-        </script>	
+				confirm("Warn!\nYour Device Maybe Will Make You strange. ")</script>	
 	</head>
-		<div id="Main-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 40px;background-color: rgba(33, 33, 33, 0.9);">
+		<div id="Main-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
 			<script>
 				function LogoOnClick(){
 					MainLeftTab = document.getElementById("Main-LeftTab")
 					MainLeftTab.className = MainLeftTab.className != "EasingOut_Left"?"EasingOut_Left":"";
 				}
 			</script>
-			<img src="./img/x100.jpg" style="position: relative; border-radius: 0px 0px 8px 0px;width: 40px;height: 40px; " onclick="LogoOnClick();return false;">
+			<img src="./img/favicon.png" style="position: relative;left: 8px;top: 8px;width: 48px;height: 48px; " onclick="LogoOnClick();return false;">
 		</div>
 		<ClientDiv style="min-height: 100%vh;">
 			<center style="max-height: 10%;font-size: 28px;">
 				<p id="ClientDiv-Center-Banner" class="FIF FI">We should study as youngest ,We must study as now .
 			</center>
-			<div id="ClientDiv-Center-ExChangeLink" class="FOF FO">
+			<center id="ClientDiv-Center-ExChangeLink" class="FOF FO EasingOut_Bottom">
 				<ul>
-					<li><img src="https://www.aurorast.tk/img/favicon.png" width="48px" height="48px "style="border-radius: 50%;"><a href="https://www.aurorast.tk/">AuroraStudio</a></li>
-					<li><img src="https://www.aurorast.tk/img/favicon.png" width="48px" height="48px "style="border-radius: 50%;"><a href="https://origamigamer.github.io/">Origami's Blog</a></li>
+					<li>
+						<img src="https://www.aurorast.tk/img/favicon.png" width="32px" height="32px "style="border-radius: 50%;">
+						<a href="https://www.aurorast.tk/">AuroraStudio</a>
+					</li>
+					<li>
+						<img src="" width="32px" height="32px "style="border-radius: 50%;">
+						<a href="https://origamigamer.github.io/">Origami's Blog</a>
+					</li>
 				</ul>
-			</div>
+			</center>
 			<div id="Main-LeftTab" class="EasingOut_Left">
 				<script>
 					function OnReadMeClick(){
@@ -84,7 +98,7 @@
 			var l_Title = document.getElementById("ClientDiv-Center-Banner")
 			var l_div = document.getElementById("ClientDiv-Center-ExChangeLink")
 			l_Title.className = l_Title.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
-			l_div.className = l_div.className != "FOF FO"?"FOF FO":"FIF FI";
+			l_div.className = l_div.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
 		}
 	</script>
 	<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
