@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="./css/Background.css">
 		<title>Creakler's Blog</title>
 		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
         	window.onload = function(){
         		var windowHeight = 0;
@@ -26,8 +27,10 @@
 				var html = document.getElementsByTagName('html')[0];
 				if(document.body.offsetHeight < windowHeight){
 				html.style.height = windowHeight;
-				};
+				};			
+				document.getElementById('ClientDiv-Center-Banner').innerHTML = ;
         	}
+        	// Get BrowserUA -----------------------------------------------
 			var os = function() {
   				var ua = navigator.userAgent, //获取浏览器UA
  				isWindowsPhone = /(?:Windows Phone)/.test(ua),
@@ -51,16 +54,16 @@
 	</head>
 		<div id="Main-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
 			<script>
-				function LogoOnClick(){
+				function MenuOnClick(){
 					MainLeftTab = document.getElementById("Main-LeftTab")
 					MainLeftTab.className = MainLeftTab.className != "EasingOut_Left"?"EasingOut_Left":"";
 				}
 			</script>
-			<img src="./img/favicon.png" style="position: relative;left: 8px;top: 8px;width: 48px;height: 48px; " onclick="LogoOnClick();return false;">
+			<img src="./img/menu.png" style="position: relative;left: 16px;top: 16px;width: 32px;height: 32px; " onclick="MenuOnClick();return false;">
 		</div>
 		<ClientDiv style="min-height: 100%vh;">
 			<center style="max-height: 10%;font-size: 28px;">
-				<p id="ClientDiv-Center-Banner" class="FIF FI">We should study as youngest ,We must study as now .
+				<p id="ClientDiv-Center-Banner" class="FIF FI">
 			</center>
 			<center id="ClientDiv-Center-ExChangeLink" class="FOF FO EasingOut_Bottom">
 				<ul>
@@ -103,7 +106,7 @@
 	</script>
 	<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
 		<font size="2px">
-		<a style="position:relative;left: -50%;" href="https://origamiyes.freeflarum.com/">OrigamiStudio</a><br>
+		<a style="position:relative;left: -50%;" href="https://origamigamer.github.io/index.html/">OrigamiStudio</a><br>
 		<a style="position:relative;left: -50%;" onclick="Js_ExchangeLink();return false ;">友情链接</a><br>
 		<a style="position:relative;left: -50%;" href="">Powered By Creakler</p>
 		</font>
