@@ -17,6 +17,7 @@
 		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
+        	const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 			function li_ReadMe_Left_Info_Init(){
 				if (os.isPc) {
 						Type = 'PC';
@@ -84,14 +85,19 @@
 			</center>
 			<div id="Main-LeftTab" class="EasingOut_Left">
 				<script>
-					function OnReadMeClick(){
+					async function OnReadMeClick(){
 						var nul = document.getElementById('ClientDiv-Center-ExChangeLink')
 						if(nul.className=='FIF FI'){
 							Js_ExchangeLink()
 						}
 						var ReadMe = document.getElementById("li-ReadMe")
+						ReadMe.style.display = ReadMe.className != 'FOF FO'?'block':'block'
+						await sleep(10)
 						/* ReadMe.style.display = ReadMe.style.display != "none"?"none":"inline"; */
 						ReadMe.className = ReadMe.className != "FOF FO"?"FOF FO":"FIF FI"
+						await sleep(990)
+						ReadMe.style.display = ReadMe.className != 'FIF FI'?'none':'block'
+						console.log(-114514)
 					}
 				</script>
 				<ul>
@@ -115,16 +121,30 @@
 				</div>
 			</div>
 			<script>
-				function Js_ExchangeLink(){
-				var nul = document.getElementById('li-ReadMe')
-				if(nul.className=='FIF FI'){
-					OnReadMeClick()
+				async function Js_ExchangeLink(){
+					var nul = document.getElementById('li-ReadMe')
+					if(nul.className=='FIF FI'){
+						OnReadMeClick()
+						}
+					var l_Title = document.getElementById("ClientDiv-Center-Banner")
+					var l_div = document.getElementById("ClientDiv-Center-ExChangeLink")
+//					l_Title.style.display = l_Title.className!='FOF FO EasingOut_Bottom'?'none':'block';
+//					l_div.style.display = l_div.className!='FOF FO EasingOut_Bottom'?'none':'block';
+					if (l_Title.className != 'FOF FO EasingOut_Bottom') {
+						l_div.style.display = 'block';
+						console.log("aa")
+					} else {
+						l_Title.style.display = 'block';
+						console.log("bb")
 					}
-				var l_Title = document.getElementById("ClientDiv-Center-Banner")
-				var l_div = document.getElementById("ClientDiv-Center-ExChangeLink")
-				l_Title.className = l_Title.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
-				l_div.className = l_div.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
-			}
+					await sleep(10)
+					l_Title.className = l_Title.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
+					l_div.className = l_div.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
+					await sleep(990)
+					l_Title.style.display = l_Title.className!='FOF FO EasingOut_Bottom'?'block':'none';
+					l_div.style.display = l_div.className!='FOF FO EasingOut_Bottom'?'block':'none';
+					console.log("1")
+				}
 		</script>
 		<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
 			<font size="2px">
