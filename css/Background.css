@@ -13,7 +13,7 @@ html{
 	font-size: 25px;
 	color: rgb(255,255,255);
 
-	background: url(https://api.sunweihu.com/api/bing1/api.php) center center fixed ;
+	background: url('https://api.ixiaowai.cn/gqapi/gqapi.php') center center fixed ;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -79,7 +79,7 @@ ul{
 	text-align: center;
 	list-style-type: none;
 }
-#li-ReadMe {
+#ClientDiv-ReadMe {
 	/* Center */
 	position: fixed;
 	display: inline-block;
@@ -93,21 +93,21 @@ ul{
 	box-shadow: 20px 20px 0px 0px rgba(0, 0, 0, 0.25);
 	border-radius: 32px;
 }
-#li-ReadMe-LeftInfo{
+#ClientDiv-ReadMe-LeftInfo{
 	position: relative;
 	width: 128px;
 	height: 100%;
 	border-radius: 32px 0px 0px 32px;
 	background-color: rgba(33, 33, 33, 0.25);
 }
-#li-ReadMe-SplitBar{
+#ClientDiv-ReadMe-SplitBar{
 	position: relative;
 	left: 8px;
 	width: 112px;
 	height: 1.5px;
 	background-color: rgba(255, 255, 255, 0.125);
 }
-#li-ReadMe-Name{
+#ClientDiv-ReadMe-Name{
 	text-align: center;
 	top: 0px;
 	width: 128px;

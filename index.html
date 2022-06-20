@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv=”Window-target” content=”_top”>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 		<link rel="shortcut icon" href="./img/favicon.png">
 		<link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -14,23 +15,11 @@
 		<meta name="copyright" content="Powerd By Creakler">
 		<link rel="stylesheet" href="./css/Background.css">
 		<title>Creakler's Blog</title>
-		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript">
-        	const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-			function li_ReadMe_Left_Info_Init(){
-				if (os.isPc) {
-						Type = 'PC';
-					} else {
-						Type = 'Mobile';
-					};
-					// console.log(Type)
-					var Type = 'li-ReadMe-li-TencentQQ-' + Type
-					var a = document.getElementById(Type);
-					a.style.display = a.style.display!="block"?"block":"none";
-				}
-        	window.onload = function(){
-        		var windowHeight = 0;
+		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var windowHeight = 0;
 				if (window.innerHeight){
 					windowHeight = window.innerHeight;
 				}else if ((document.body) && (document.body.clientHeight)){
@@ -40,116 +29,44 @@
 				if(document.body.offsetHeight < windowHeight){
 				html.style.height = windowHeight;
 				};			
-				document.getElementById('ClientDiv-Center-Banner').innerHTML = HtmlUrlRead('https://v1.hitokoto.cn/?encode=text');
-				li_ReadMe_Left_Info_Init()
+				document.getElementById('ClientDiv-Center-Banner').innerHTML = HtmlUrlRead('https://api.ixiaowai.cn/tgrj/index.php');
+				ClientDiv_ReadMe_Left_Info_Init()
 				OutPutAboutMe()
-        	}
-        </script>
-        <script type="text/javascript">
-        	// Get BrowserUA -----------------------------------------------
-			os = function() {
-  				var ua = navigator.userAgent, //获取浏览器UA
- 				isWindowsPhone = /(?:Windows Phone)/.test(ua),
-				isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
-				isAndroid = /(?:Android)/.test(ua),
-				isFireFox = /(?:Firefox)/.test(ua),
-				isChrome = /(?:Chrome|CriOS)/.test(ua),
-				isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
-				isPhone = /(?:iPhone)/.test(ua) && !isTablet,
-				isPc = !isPhone && !isAndroid && !isSymbian;
-				return {
-					isTablet: isTablet,
-						isPhone: isPhone,
-					isAndroid : isAndroid,
-					isPc : isPc
-				};
-			}();
-			// --------------------------------------------------------------
-        	if (!os.isPc){
-				// confirm("Warn!\nYour Device Maybe Will Make You strange. ")
-        	}
-		</script>	
+			}
+		</script>
 	</head>
 		<div id="Main-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
-			<script>
-				function MenuOnClick(){
-					MainLeftTab = document.getElementById("Main-LeftTab")
-					MainLeftTab.className = MainLeftTab.className != "EasingOut_Left"?"EasingOut_Left":"";
-				}
-			</script>
-			<img src="./img/menu.png" style="position: relative;left: 16px;top: 16px;width: 32px;height: 32px; " onclick="MenuOnClick();return false;">
+			<img src="./img/menu.png" style="position: relative;left: 16px;top: 16px;width: 32px;height: 32px; " onclick="Main_LeftTab_OnClick()">
 		</div>
 		<ClientDiv style="min-height: 100%vh;">
 			<center style="max-height: 10%;font-size: 28px;">
 				<p id="ClientDiv-Center-Banner" class="FIF FI">
 			</center>
 			<div id="Main-LeftTab" class="EasingOut_Left">
-				<script>
-					async function OnReadMeClick(){
-						var nul = document.getElementById('ClientDiv-Center-ExChangeLink')
-						if(nul.className=='FIF FI'){
-							Js_ExchangeLink()
-						}
-						var ReadMe = document.getElementById("li-ReadMe")
-						ReadMe.style.display = ReadMe.className != 'FOF FO'?'block':'block'
-						await sleep(10)
-						/* ReadMe.style.display = ReadMe.style.display != "none"?"none":"inline"; */
-						ReadMe.className = ReadMe.className != "FOF FO"?"FOF FO":"FIF FI"
-						await sleep(990)
-						ReadMe.style.display = ReadMe.className != 'FIF FI'?'none':'block'
-						console.log(-114514)
-					}
-				</script>
 				<ul>
-					<li><a onclick="OnReadMeClick()">&#xE13D Read Me</a></li>
+					<li><a onclick="Main_LeftTab_li_ReadMe_OnClick()">&#xE13D Read Me</a></li>
 				</ul>
 			</div>
-			<div id="li-ReadMe" class="FOF FO">
-				<div id="li-ReadMe-LeftInfo">
-					<div id="li-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 64px;max-width: 128px;height: 128px;"></div>
-					<div id="li-ReadMe-Name">千矢 - QianShi</div>
-					<div id="li-ReadMe-SplitBar"></div>
+			<div id="ClientDiv-ReadMe" class="FOF FO">
+				<div id="ClientDiv-ReadMe-LeftInfo">
+					<div id="ClientDiv-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 64px;max-width: 128px;height: 128px;"></div>
+					<div id="ClientDiv-ReadMe-Name">千矢 - QianShi</div>
+					<div id="ClientDiv-ReadMe-SplitBar"></div>
 					<ul style="font-size: 18px;">
 						<li>
 							<a href="https://space.bilibili.com/439946965">Bilibili
 						</li>
 						<li>
-							<a id="li-ReadMe-li-TencentQQ-PC" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2937396379" style="display: none;">TencentQQ - PC</a>
-							<a id="li-ReadMe-li-TencentQQ-Mobile" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2937396379&amp;site=qq&amp;menu=yes" style="display: none;">TencentQQ - Mobile</a>
+							<a id="ClientDiv-ReadMe-li-TencentQQ-PC" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2937396379" style="display: none;">TencentQQ - PC</a>
+							<a id="ClientDiv-ReadMe-li-TencentQQ-Mobile" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2937396379&amp;site=qq&amp;menu=yes" style="display: none;">TencentQQ - Mobile</a>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<script>
-				async function Js_ExchangeLink(){
-					var nul = document.getElementById('li-ReadMe')
-					if(nul.className=='FIF FI'){
-						OnReadMeClick()
-						}
-					var l_Title = document.getElementById("ClientDiv-Center-Banner")
-					var l_div = document.getElementById("ClientDiv-Center-ExChangeLink")
-//					l_Title.style.display = l_Title.className!='FOF FO EasingOut_Bottom'?'none':'block';
-//					l_div.style.display = l_div.className!='FOF FO EasingOut_Bottom'?'none':'block';
-					if (l_Title.className != 'FOF FO EasingOut_Bottom') {
-						l_div.style.display = 'block';
-						console.log("aa")
-					} else {
-						l_Title.style.display = 'block';
-						console.log("bb")
-					}
-					await sleep(10)
-					l_Title.className = l_Title.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
-					l_div.className = l_div.className != "FOF FO EasingOut_Bottom"?"FOF FO EasingOut_Bottom":"FIF FI";
-					await sleep(990)
-					l_Title.style.display = l_Title.className!='FOF FO EasingOut_Bottom'?'block':'none';
-					l_div.style.display = l_div.className!='FOF FO EasingOut_Bottom'?'block':'none';
-					console.log("1")
-				}
-		</script>
 		<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
 			<font size="2px">
-			<a style="position:relative;left: -50%;" href="https://origamigamer.github.io/index.html/">OrigamiStudio</a><br>
-			<a style="position:relative;left: -50%;" onclick="Js_ExchangeLink();return false ;">友情链接</a><br>
+			<a style="position:relative;left: -50%;" href="https://origamigamer.github.io/index.html">OrigamiStudio</a><br>
+			<a style="position:relative;left: -50%;" onclick="Js_ExchangeLink () ;return false ;">友情链接</a><br>
 			<a style="position:relative;left: -50%;" href="">Powered By Creakler</a>
 			</font>
 		</center>
@@ -159,9 +76,11 @@
 					<a href="https://www.aurorast.tk/"><img src="https://www.aurorast.tk/img/favicon.png" width="32px" height="32px "style="border-radius: 50%;">AuroraStudio</a>
 				</li>
 				<li>
-					<a href="https://origamigamer.github.io/"><img src="" width="32px" height="32px "style="border-radius: 50%;">Origami's Blog</a>
+					<a href="https://origamigamer.github.io"><img src="" width="32px" height="32px "style="border-radius: 50%;">Origami's Blog</a>
 				</li>
 			</ul>
 		</center>
+		<video muted="muted" style="display: none;"></video>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="https://music.163.com/outchain/player?type=0&id=411796573&auto=1&height=90"></iframe>
 	</ClientDiv>
 </html>
