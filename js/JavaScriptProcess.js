@@ -74,6 +74,7 @@ async function Js_ExchangeLink(){
 	ExChangeLink.style.display = ExChangeLink.className!='FOF FO EasingOut_Bottom'?'block':'none';
 }
 function ClientDiv_ReadMe_Left_Info_Init(){
-	var DOM_Element = document.getElementById('ClientDiv-ReadMe-li-TencentQQ-' + SystemInfo().isPc != false ? 'PC': 'Mobile' );
+	var System = SystemInfo().isPc != false ? 'PC': 'Mobile' ;
+	var DOM_Element = document.getElementById('ClientDiv-ReadMe-li-TencentQQ-' + System);
 	DOM_Element.style.display = DOM_Element.style.display!="block"?"block":"none";
 }
