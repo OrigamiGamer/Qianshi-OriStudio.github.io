@@ -36,19 +36,28 @@
 	</head>
 	<ClientDiv style="min-height: 100%vh;">
 		<div id="ClientDiv-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
-			<!-- <input id="ClientDiv-TopTab-MoreOptions" type="button" onclick="ClientDiv_LeftTab_OnClick()"> -->
 			<i id="ClientDiv-TopTab-MoreOptions" onclick="ClientDiv_LeftTab_OnClick()" class="fa fa-bars" aria-hidden="true"></i>
-			<!-- <button style="background: url(''); position: relative;left: 16px;top: 16px;width: 32px;height: 32px; " onclick="Main_LeftTab_OnClick()"> -->
 		</div>
 		<center style="max-height: 10%;font-size: 28px;">
 			<p id="ClientDiv-Center-Banner" class="FIF FI">
 		</center>
 		<div id="ClientDiv-LeftTab" class="EasingOut_Left"  onmouseleave="ClientDiv_LeftTab_OnMouseLeave(this)" onmousemove="ClientDiv_LeftTab_OnMouseOver(this)">
 			<ul>
-				<li><a onclick="ClientDiv_LeftTab_li_ReadMe_OnClick()"><i class="fa fa-user-o" aria-hiffen="true"></i>  Read Me</a></li>
+				<li><a onclick="ClientDiv_LeftTab_li_ReadMe_OnClick()"><i class="fa fa-user-o" aria-hiffen="true"></i>&#x3000Read Me</a></li>
+				<li id="ClientDiv-OptionsUI">
+					<a onclick="ClientDiv_OptionsUI_OnClick()"><i class="fa fa-cog" aria-hidden="true"></i>&#x3000Settings</a>
+					<ul id="ClientDiv-OptionsUI-ul">
+						<li id="ClientDiv-OptionsUI-ul-BackgroundSelect-SelectText">
+							你好
+							<select id="ClientDiv-OptionsUI-ul-BackgroundSelect-Select">
+								<option value="TEST">test</option>
+							</select>
+						</li>
+					</ul>
+				</li>
 			</ul>
 		</div>
-		<div id="ClientDiv-ReadMe" class="FOF FO">
+		<div id="ClientDiv-ReadMe" class="FOF FO" style="display: none;">
 			<div id="ClientDiv-ReadMe-LeftInfo">
 				<div id="ClientDiv-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 64px;max-width: 128px;height: 128px;"></div>
 				<div id="ClientDiv-ReadMe-Name">千矢 - QianShi</div>

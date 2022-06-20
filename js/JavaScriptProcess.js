@@ -88,5 +88,13 @@ async function ClientDiv_LeftTab_OnMouseLeave(x) {
 	x.className = 'EasingOut_Left'
 }
 async function ClientDiv_LeftTab_OnMouseOver(x) {
-	x.className = ''
+	x.className = '';
+}
+async function ClientDiv_OptionsUI_OnClick(){
+	OptionsUI_li = document.getElementById('ClientDiv-OptionsUI-ul');
+	OptionsUI_li.style.display = 'block';
+	await sleep (1)
+	OptionsUI_li.className = OptionsUI_li.className != 'FOF FO EasingOut_Left'?'FOF FO EasingOut_Left':'FIF FI';
+	await sleep(610)
+	OptionsUI_li.style.display = OptionsUI_li.className != 'FOF FO EasingOut_Left' ? 'block' : 'none';
 }

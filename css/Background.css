@@ -7,6 +7,12 @@
     -webkit-user-select:none;
     -ms-user-select:none;
     user-select:none;
+
+    -webkit-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1); 
+  	-moz-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
+	-ms-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
+	-o-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
+	transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
 }
 html{
 	font-family: Segoe UI,Microsoft YaHei;
@@ -42,6 +48,7 @@ hr{
 }
 ul{
 	margin: 12.5px 0;
+	line-height: 1.5;
 	padding: 0;
 	text-align: center;
 	list-style-type: none;
@@ -103,11 +110,6 @@ ul{
 	height: 100%;
 	background-color: rgba(33, 33, 33, 0.5);
 	/* border-radius: 25px; */
-	-webkit-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1); 
-  	-moz-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
-	-ms-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
-	-o-transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
-	transition: transform 0.6s cubic-bezier(0.61, 1, 0.88, 1);
 }
 #ClientDiv-TopTab-MoreOptions{
 	position: relative;
@@ -153,4 +155,8 @@ ul{
 	top: 0px;
 	width: 128px;
 	font-size: 18px;
+}
+#ClientDiv-OptionsUI-ul-BackgroundSelect-Select{
+	position: relative;
+	height: 37.5px;
 }
