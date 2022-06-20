@@ -7,6 +7,7 @@
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 		<link rel="shortcut icon" href="./img/favicon.png">
 		<link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<meta name="application-name" content="Qianshi-OrigamiStudio_Blogs">
 		<meta name="author" content="By Qianshi-Creakler">
@@ -29,40 +30,38 @@
 				if(document.body.offsetHeight < windowHeight){
 				html.style.height = windowHeight;
 				};			
-				document.getElementById('ClientDiv-Center-Banner').innerHTML = HtmlUrlRead('https://api.ixiaowai.cn/tgrj/index.php');
-				ClientDiv_ReadMe_Left_Info_Init()
-				OutPutAboutMe()
+				IndexFunctionInit ()
 			}
 		</script>
 	</head>
-		<div id="Main-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
-			<img src="./img/menu.png" style="position: relative;left: 16px;top: 16px;width: 32px;height: 32px; " onclick="Main_LeftTab_OnClick()">
+	<ClientDiv style="min-height: 100%vh;">
+		<div id="ClientDiv-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
+			<!-- <input id="ClientDiv-TopTab-MoreOptions" type="button" onclick="ClientDiv_LeftTab_OnClick()"> -->
+			<i id="ClientDiv-TopTab-MoreOptions" onclick="ClientDiv_LeftTab_OnClick()" class="fa fa-bars" aria-hidden="true"></i>
+			<!-- <button style="background: url(''); position: relative;left: 16px;top: 16px;width: 32px;height: 32px; " onclick="Main_LeftTab_OnClick()"> -->
 		</div>
-		<ClientDiv style="min-height: 100%vh;">
-			<center style="max-height: 10%;font-size: 28px;">
-				<p id="ClientDiv-Center-Banner" class="FIF FI">
-			</center>
-			<div id="Main-LeftTab" class="EasingOut_Left">
-				<ul>
-					<li><a onclick="Main_LeftTab_li_ReadMe_OnClick()">&#xE13D Read Me</a></li>
+		<center style="max-height: 10%;font-size: 28px;">
+			<p id="ClientDiv-Center-Banner" class="FIF FI">
+		</center>
+		<div id="ClientDiv-LeftTab" class="EasingOut_Left"  onmouseleave="ClientDiv_LeftTab_OnMouseLeave(this)" onmousemove="ClientDiv_LeftTab_OnMouseOver(this)">
+			<ul>
+				<li><a onclick="ClientDiv_LeftTab_li_ReadMe_OnClick()"><i class="fa fa-user-o" aria-hiffen="true"></i>  Read Me</a></li>
+			</ul>
+		</div>
+		<div id="ClientDiv-ReadMe" class="FOF FO">
+			<div id="ClientDiv-ReadMe-LeftInfo">
+				<div id="ClientDiv-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 64px;max-width: 128px;height: 128px;"></div>
+				<div id="ClientDiv-ReadMe-Name">千矢 - QianShi</div>
+				<div id="ClientDiv-ReadMe-SplitBar"></div>
+				<ul style="font-size: 18px;">
+					<li><a href="https://space.bilibili.com/439946965">Bilibili</a></li>
+					<li>
+						<a id="ClientDiv-ReadMe-li-TencentQQ-PC" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2937396379" style="display: none;">TencentQQ - PC</a>
+						<a id="ClientDiv-ReadMe-li-TencentQQ-Mobile" href="https://wpa.qq.com/msgrd?v=3&amp;uin=2937396379&amp;site=qq&amp;menu=yes" style="display: none;">TencentQQ - Mobile</a>
+					</li>
 				</ul>
 			</div>
-			<div id="ClientDiv-ReadMe" class="FOF FO">
-				<div id="ClientDiv-ReadMe-LeftInfo">
-					<div id="ClientDiv-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 64px;max-width: 128px;height: 128px;"></div>
-					<div id="ClientDiv-ReadMe-Name">千矢 - QianShi</div>
-					<div id="ClientDiv-ReadMe-SplitBar"></div>
-					<ul style="font-size: 18px;">
-						<li>
-							<a href="https://space.bilibili.com/439946965">Bilibili
-						</li>
-						<li>
-							<a id="ClientDiv-ReadMe-li-TencentQQ-PC" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2937396379" style="display: none;">TencentQQ - PC</a>
-							<a id="ClientDiv-ReadMe-li-TencentQQ-Mobile" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2937396379&amp;site=qq&amp;menu=yes" style="display: none;">TencentQQ - Mobile</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+		</div>
 		<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
 			<font size="2px">
 			<a style="position:relative;left: -50%;" href="https://origamigamer.github.io/index.html">OrigamiStudio</a><br>

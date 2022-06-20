@@ -1,5 +1,10 @@
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 $(document).ready(function(){})
+function IndexFunctionInit() {
+	document.getElementById('ClientDiv-Center-Banner').innerHTML = HtmlUrlRead('https://api.ixiaowai.cn/tgrj/index.php');
+	ClientDiv_ReadMe_Left_Info_Init()
+	OutPutAboutMe()
+}
 function HtmlUrlRead(URL) {
 	var xhr = new XMLHttpRequest()
 	xhr.open('Get',URL,false)
@@ -36,11 +41,11 @@ if (!SystemInfo().isPc){
 	console.warn('The current device environment is not a PC, and errors may occur!')
 }
 // ------------------------------User Function----------------------------
-function Main_LeftTab_OnClick(){
-	MainLeftTab = document.getElementById("Main-LeftTab")
-	MainLeftTab.className = MainLeftTab.className != "EasingOut_Left"?"EasingOut_Left":"";
+function ClientDiv_LeftTab_OnClick(){
+	ClientDivLeftTab = document.getElementById("ClientDiv-LeftTab")
+	ClientDivLeftTab.className = ClientDivLeftTab.className != "EasingOut_Left"?"EasingOut_Left":"";
 }
-async function Main_LeftTab_li_ReadMe_OnClick(){
+async function ClientDiv_LeftTab_li_ReadMe_OnClick(){
 	var nul = document.getElementById('ClientDiv-Center-ExChangeLink')
 	if(nul.className=='FIF FI'){
 		Js_ExchangeLink()
@@ -77,4 +82,11 @@ function ClientDiv_ReadMe_Left_Info_Init(){
 	var System = SystemInfo().isPc != false ? 'PC': 'Mobile' ;
 	var DOM_Element = document.getElementById('ClientDiv-ReadMe-li-TencentQQ-' + System);
 	DOM_Element.style.display = DOM_Element.style.display!="block"?"block":"none";
+}
+async function ClientDiv_LeftTab_OnMouseLeave(x) {
+	await sleep(250)
+	x.className = 'EasingOut_Left'
+}
+async function ClientDiv_LeftTab_OnMouseOver(x) {
+	x.className = ''
 }
