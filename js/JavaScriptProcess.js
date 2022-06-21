@@ -112,7 +112,7 @@ function SelectOptionsImport(){
 	var DOM_Select = document.getElementById('ClientDiv-OptionsUI-ul-BackgroundSelect-Select');
 	DOM_Select.innerHTML = ''
 	var cookie_BGApi = GetCookieKey('BackgroundApi');
-	for (var i = 0; i < getJsonLength(jsonObj); i++) {
+	for (var i = 0; i < getJsonLength(jsonObj.List); i++) {
 		if (cookie_BGApi) {
 			if(cookie_BGApi == md5(jsonObj.ListName[i])){
 				var currentIndex = i;
@@ -134,7 +134,7 @@ function ApplyOptionsSave() {
 	var jsonData = HtmlUrlRead('config/DefaultBackgroundApiList.json')
 	var jsonObj = JSON.parse(jsonData);
 	var cookie_BGApi = GetCookieKey('BackgroundApi');
-	for (var i = 0; i < getJsonLength(jsonObj); i++) {
+	for (var i = 0; i < getJsonLength(jsonObj.List); i++) {
 		if (cookie_BGApi) {
 			if(cookie_BGApi == md5(jsonObj.ListName[i])){
 				var currentAPI = jsonObj.List[i];
