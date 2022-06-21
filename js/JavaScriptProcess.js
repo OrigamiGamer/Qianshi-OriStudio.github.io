@@ -107,7 +107,7 @@ function FromFalseToTrue(URL) {
 }
 // ------------------------------Options Proc------------------------------
 function SelectOptionsImport(){
-	var jsonData = false != true ? HtmlUrlRead('config/DefaultBackgroundApiList.json') : '{"DefaultValue":"AcyMoeNormal","ListName":["ixiaowai","AcyMoeNormal","AcyMoeR18"],"List":["https://api.ixiaowai.cn/gqapi/gqapi.php","https://www.acy.moe/api/4","https://www.acy.moe/api/r18"]}'
+	var jsonData = HtmlUrlRead('config/DefaultBackgroundApiList.json')
 	var jsonObj = JSON.parse(jsonData);
 	var DOM_Select = document.getElementById('ClientDiv-OptionsUI-ul-BackgroundSelect-Select');
 	DOM_Select.innerHTML = ''
@@ -131,7 +131,7 @@ function SelectOptionsImport(){
 	DOM_Select.options[currentIndex].selected = true;
 }
 function ApplyOptionsSave() {
-	var jsonData = false != true ? HtmlUrlRead('config/DefaultBackgroundApiList.json') : '{"DefaultValue":"AcyMoeNormal","ListName":["ixiaowai","AcyMoeNormal","AcyMoeR18"],"List":["https://api.ixiaowai.cn/gqapi/gqapi.php","https://www.acy.moe/api/4","https://www.acy.moe/api/r18"]}'
+	var jsonData = HtmlUrlRead('config/DefaultBackgroundApiList.json')
 	var jsonObj = JSON.parse(jsonData);
 	var cookie_BGApi = GetCookieKey('BackgroundApi');
 	for (var i = 0; i < getJsonLength(jsonObj); i++) {
