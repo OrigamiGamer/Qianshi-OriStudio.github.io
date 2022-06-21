@@ -1,0 +1,27 @@
+{
+	"DefaultValue": "AcyMoeNormal - 1",
+	"ListName":
+	[
+		"缙哥哥博客API -Bing",
+		"ixiaowai - 二次元",
+		"ixiaowai - MC酱",
+		"ixiaowai - 高清",
+		"AcyMoeNormal - 1",
+		"AcyMoeNormal - 2",
+		"AcyMoeNormal - 3",
+		"AcyMoeNormal - 4",
+		"AcyMoeR18"
+	],
+	"List":
+	[
+		"https://api.dujin.org/bing/1920.php",
+		"https://api.ixiaowai.cn/gqapi/gqapi.php",
+		"https://api.ixiaowai.cn/mcapi/mcapi.php",
+		"https://api.ixiaowai.cn/gqapi/gqapi.php",
+		"https://www.acy.moe/api/1",
+		"https://www.acy.moe/api/2",
+		"https://www.acy.moe/api/3",
+		"https://www.acy.moe/api/4",
+		"https://www.acy.moe/api/r18"
+	]
+}

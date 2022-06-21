@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html style="background-image: url('https://api.ixiaowai.cn/gqapi/gqapi.php');">
 	<head>
+		<title>Creakler's Blog</title>
 		<meta charset="utf-8">
 		<meta http-equiv=”Window-target” content=”_top”>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
-		<link rel="shortcut icon" href="./img/favicon.png">
-		<link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
-		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<meta name="application-name" content="Qianshi-OrigamiStudio_Blogs">
 		<meta name="author" content="By Qianshi-Creakler">
 		<meta name="ketwords" content="Blog,OrigamiStudio">
 		<meta name="description" content="This a Creakler's Blog">
 		<meta name="copyright" content="Powerd By Creakler">
+		<link rel="icon" href="./img/favicon.png">
+		<link rel="shortcut icon" href="./img/favicon.png">
+		<link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
 		<link rel="stylesheet" href="./css/Background.css">
-		<title>Creakler's Blog</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="./js/MD5-2.19.0-Blueimp.js"></script>
 		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
 		<script type="text/javascript">
 			window.onload = function(){
@@ -35,8 +37,8 @@
 		</script>
 	</head>
 	<ClientDiv style="min-height: 100%vh;">
-		<div id="ClientDiv-TopTab" style="position: absolute;left: 0px;top: 0px; width: 100%;height: 64px;background-color: rgba(33, 33, 33, 0.9);">
-			<i id="ClientDiv-TopTab-MoreOptions" onclick="ClientDiv_LeftTab_OnClick()" class="fa fa-bars" aria-hidden="true"></i>
+		<div id="ClientDiv-TopTab" style="position: absolute;left: 0px;top: 0px;min-width: 100%;min-height: 64px;background-color: rgba(33, 33, 33, 0.9);">
+			<i id="ClientDiv-TopTab-MoreOptions" onclick="ClientDiv_LeftTab_OnClick()" class="fa fa-ellipsis-h fa-fw fa-2x" aria-hidden="true"></i>
 		</div>
 		<center style="max-height: 10%;font-size: 28px;">
 			<p id="ClientDiv-Center-Banner" class="FIF FI">
@@ -48,9 +50,9 @@
 					<a onclick="ClientDiv_OptionsUI_OnClick()"><i class="fa fa-cog" aria-hidden="true"></i>&#x3000Settings</a>
 					<ul id="ClientDiv-OptionsUI-ul">
 						<li id="ClientDiv-OptionsUI-ul-BackgroundSelect-SelectText">
-							你好
-							<select id="ClientDiv-OptionsUI-ul-BackgroundSelect-Select">
-								<option value="TEST">test</option>
+							 - BackgroundAPI - &nbsp
+							<select id="ClientDiv-OptionsUI-ul-BackgroundSelect-Select" onchange="SelectOptionsSave(this.value);">
+								<option value="none">Watting For Loading.</option>
 							</select>
 						</li>
 					</ul>
@@ -89,6 +91,6 @@
 			</ul>
 		</center>
 		<video muted="muted" style="display: none;"></video>
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="https://music.163.com/outchain/player?type=0&id=411796573&auto=1&height=90"></iframe>
+	<!--	<iframe id="NeteaseMusicLoader" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src=""></iframe>-->
 	</ClientDiv>
 </html>

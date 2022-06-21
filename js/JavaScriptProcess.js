@@ -3,13 +3,33 @@ $(document).ready(function(){})
 function IndexFunctionInit() {
 	document.getElementById('ClientDiv-Center-Banner').innerHTML = HtmlUrlRead('https://api.ixiaowai.cn/tgrj/index.php');
 	ClientDiv_ReadMe_Left_Info_Init()
+	SelectOptionsImport()
 	OutPutAboutMe()
+	document.getElementById('NeteaseMusicLoader').src = 'https://music.163.com/outchain/player?type=0&id=411796573&auto=1&height=90'
 }
 function HtmlUrlRead(URL) {
 	var xhr = new XMLHttpRequest()
 	xhr.open('Get',URL,false)
 	xhr.send(null)
 	return (xhr.responseText)
+}
+function AjaxHtmlReadJson(Path) {
+	$.ajax({
+		url: Path,
+		type: "GET",
+		dataType: "json",
+		async: true,
+		success: function(data) {
+			return (data.responseText);
+		}
+	});
+}
+function getJsonLength(jsonData) {
+	var jsonlength = 0;
+	for (var item in jsonData){
+		jsonlength++ ;
+	}
+	return jsonlength
 }
 function OutPutAboutMe() {
 	console.log('# 千矢 - Creakler')
@@ -40,7 +60,98 @@ SystemInfo = function() {
 if (!SystemInfo().isPc){
 	console.warn('The current device environment is not a PC, and errors may occur!')
 }
-// ------------------------------User Function----------------------------
+// ------------------------------Interface   ------------------------------
+function getCookie(name){
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i].trim();
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+function SetCookieValue(Value, Key) {
+	DelCookieValue(Value)
+	document.cookie = Value + '=' + Key;
+}
+function DelCookieValue(Value) {
+	document.cookie= Value + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+}
+function GetCookieKey(Value){
+	Key = getCookie(Value)
+	if(Key == null){
+		return null;
+	}else{
+		return Key;
+	}
+}
+function jsleft(lefts,leftn){
+    var sl=lefts;
+    sl = sl.substring(0,leftn);     
+    return sl;
+}
+function FromFalseToTrue(URL) {
+	for (var i = 0; i < 2; i++) {
+		var Ret = HtmlUrlRead(URL);
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET',Ret,true);
+		xhr.onreadystatechange = function () {
+			if(xhr.readyState == 4){
+				if (xhr.state == 200 || xhr.status == 0) {
+					return xhr.responseStream
+				}
+			}
+		xhr.send(null);
+		}
+	}
+}
+// ------------------------------Options Proc------------------------------
+function SelectOptionsImport(){
+	var jsonData = false != true ? HtmlUrlRead('config/DefaultBackgroundApiList.json') : '{"DefaultValue":"AcyMoeNormal","ListName":["ixiaowai","AcyMoeNormal","AcyMoeR18"],"List":["https://api.ixiaowai.cn/gqapi/gqapi.php","https://www.acy.moe/api/4","https://www.acy.moe/api/r18"]}'
+	var jsonObj = JSON.parse(jsonData);
+	var DOM_Select = document.getElementById('ClientDiv-OptionsUI-ul-BackgroundSelect-Select');
+	DOM_Select.innerHTML = ''
+	var cookie_BGApi = GetCookieKey('BackgroundApi');
+	for (var i = 0; i < getJsonLength(jsonObj); i++) {
+		if (cookie_BGApi) {
+			if(cookie_BGApi == md5(jsonObj.ListName[i])){
+				var currentIndex = i;
+			}
+		} else if (jsonObj.ListName[i] == jsonObj.DefaultValue) {
+			var currentIndex = i;
+		} else if (!currentIndex && !cookie_BGApi) {
+			console.error('Cookie-Config Be Changed And Danger!');
+		}
+		var DOM_NewOption = document.createElement('option');
+		DOM_NewOption.text = jsonObj.ListName[i];
+		DOM_NewOption.value = md5(jsonObj.ListName[i]);
+		DOM_Select.appendChild(DOM_NewOption);
+	}
+	document.firstElementChild.style.backgroundImage = 'url('+jsonObj.List[currentIndex]+')';
+	DOM_Select.options[currentIndex].selected = true;
+}
+function ApplyOptionsSave() {
+	var jsonData = false != true ? HtmlUrlRead('config/DefaultBackgroundApiList.json') : '{"DefaultValue":"AcyMoeNormal","ListName":["ixiaowai","AcyMoeNormal","AcyMoeR18"],"List":["https://api.ixiaowai.cn/gqapi/gqapi.php","https://www.acy.moe/api/4","https://www.acy.moe/api/r18"]}'
+	var jsonObj = JSON.parse(jsonData);
+	var cookie_BGApi = GetCookieKey('BackgroundApi');
+	for (var i = 0; i < getJsonLength(jsonObj); i++) {
+		if (cookie_BGApi) {
+			if(cookie_BGApi == md5(jsonObj.ListName[i])){
+				var currentAPI = jsonObj.List[i];
+			}
+		} else if (jsonObj.ListName[i] == jsonObj.DefaultValue) {
+			var currentAPI = jsonObj.List[i];
+		} else if (!currentAPI && !cookie_BGApi) {
+			console.error('Cookie-Config Be Changed And Danger!');
+		}
+	}
+	document.firstElementChild.style.backgroundImage = 'url('+ currentAPI +')';
+}
+function SelectOptionsSave(x) {
+	SetCookieValue('BackgroundApi', x);
+	ApplyOptionsSave();
+}
+// ------------------------------User Function------------------------------
 function ClientDiv_LeftTab_OnClick(){
 	ClientDivLeftTab = document.getElementById("ClientDiv-LeftTab")
 	ClientDivLeftTab.className = ClientDivLeftTab.className != "EasingOut_Left"?"EasingOut_Left":"";
