@@ -72,7 +72,7 @@ function getCookie(name){
 }
 function SetCookieValue(Value, Key) {
 	DelCookieValue(Value)
-	document.cookie = Value + '=' + Key;
+	document.cookie = Value + '=' + Key+'; expires=Sat, 31 Dec 9999 00:00:00 GMT';
 }
 function DelCookieValue(Value) {
 	document.cookie= Value + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
