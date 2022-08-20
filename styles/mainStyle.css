@@ -1,0 +1,49 @@
+/* import fonts */
+@font-face {
+    font-family: Segoe Fluent Icons;
+    src: url('../resource/fonts/Segoe Fluent Icons.ttf');
+}
+/* - - - -*/
+*{
+    font-family: Segoe Fluent Icons, Segoe UI;
+}
+html{
+    background-color: #252526;
+}
+markdown{
+    position: absolute;
+    color: white;
+    left: 48px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+/* - - - -*/
+a{
+    display: block;
+    text-decoration:none;
+    color: black;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #fff;
+}
+/* - - - -*/
+#navigationBar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 48px;
+    height: 100%;
+    background-color: #333333;
+}
+.navigationBar_li{
+    font-family: Segoe Fluent Icons, Segoe UI;
+    font-size: 24px;
+    position: absolute;
+    color: #858585;
+    left: 12px;
+
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+}

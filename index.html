@@ -1,96 +1,26 @@
 <!DOCTYPE html>
-<html style="background-image: url('https://api.ixiaowai.cn/gqapi/gqapi.php');">
-	<head>
-		<title>Creakler's Blog</title>
-		<meta charset="utf-8">
-		<meta http-equiv=”Window-target” content=”_top”>
-		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<meta name="application-name" content="Qianshi-OrigamiStudio_Blogs">
-		<meta name="author" content="By Qianshi-Creakler">
-		<meta name="ketwords" content="Blog,OrigamiStudio">
-		<meta name="description" content="This a Creakler's Blog">
-		<meta name="copyright" content="Powerd By Creakler">
-		<link rel="icon" href="./img/favicon.png">
-		<link rel="shortcut icon" href="./img/favicon.png">
-		<link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
-		<link rel="stylesheet" href="./css/Background.css">
-		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script type="text/javascript" src="./js/MD5-2.19.0-Blueimp.js"></script>
-		<script type="text/javascript" src="./js/JavaScriptProcess.js"></script>
-		<script type="text/javascript">
-			window.onload = function(){
-				var windowHeight = 0;
-				if (window.innerHeight){
-					windowHeight = window.innerHeight;
-				}else if ((document.body) && (document.body.clientHeight)){
-					windowHeight = document.body.clientHeight;
-				}
-				var html = document.getElementsByTagName('html')[0];
-				if(document.body.offsetHeight < windowHeight){
-				html.style.height = windowHeight;
-				};			
-				IndexFunctionInit ()
-			}
-		</script>
-	</head>
-	<ClientDiv style="min-height: 100%vh;">
-		<div id="ClientDiv-TopTab" style="position: absolute;left: 0px;top: 0px;min-width: 100%;min-height: 64px;background-color: rgba(33, 33, 33, 0.9);">
-			<i id="ClientDiv-TopTab-MoreOptions" onclick="ClientDiv_LeftTab_OnClick()" class="fa fa-ellipsis-h fa-fw fa-2x" aria-hidden="true"></i>
-		</div>
-		<center style="max-height: 10%;font-size: 28px;">
-			<p id="ClientDiv-Center-Banner" class="FIF FI">
-		</center>
-		<div id="ClientDiv-LeftTab" class="EasingOut_Left"  onmouseleave="ClientDiv_LeftTab_OnMouseLeave(this)" onmousemove="ClientDiv_LeftTab_OnMouseOver(this)">
-			<ul>
-				<li><a onclick="ClientDiv_LeftTab_li_ReadMe_OnClick()"><i class="fa fa-user-o" aria-hiffen="true"></i>&#x3000Read Me</a></li>
-				<li id="ClientDiv-OptionsUI">
-					<a onclick="ClientDiv_OptionsUI_OnClick()"><i class="fa fa-cog" aria-hidden="true"></i>&#x3000Settings</a>
-					<ul id="ClientDiv-OptionsUI-ul">
-						<li id="ClientDiv-OptionsUI-ul-BackgroundSelect-SelectText">
-							 - BackgroundAPI - &nbsp
-							<select id="ClientDiv-OptionsUI-ul-BackgroundSelect-Select" onchange="SelectOptionsSave(this.value);">
-								<option value="none">Waitting For Loading.</option>
-							</select>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-		<div id="ClientDiv-ReadMe" class="FOF FO" style="display: none;">
-			<div id="ClientDiv-ReadMe-LeftInfo">
-				<div id="ClientDiv-ReadMe-QQHeader" style="background: url(https://tenapi.cn/qqimg/?qq=2937396379) center no-repeat;background-size:100% 100%;border-radius: 64px;max-width: 128px;height: 128px;"></div>
-				<div id="ClientDiv-ReadMe-Name">千矢 - QianShi</div>
-				<div id="ClientDiv-ReadMe-SplitBar"></div>
-				<ul style="font-size: 18px;">
-					<li><a href="https://space.bilibili.com/439946965">Bilibili</a></li>
-					<li>
-						<a id="ClientDiv-ReadMe-li-TencentQQ-PC" href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2937396379" style="display: none;">TencentQQ - PC</a>
-						<a id="ClientDiv-ReadMe-li-TencentQQ-Mobile" href="https://wpa.qq.com/msgrd?v=3&amp;uin=2937396379&amp;site=qq&amp;menu=yes" style="display: none;">TencentQQ - Mobile</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<center style="position: absolute; left: 50%;bottom: 0px;line-height: 18px;" >
-			<font size="2px">
-			<a style="position:relative;left: -50%;" href="https://origamigamer.github.io/index.html">OrigamiStudio</a><br>
-			<a style="position:relative;left: -50%;" onclick="Js_ExchangeLink () ;return false ;">友情链接</a><br>
-			<a style="position:relative;left: -50%;" href="">Powered By Creakler</a>
-			</font>
-		</center>
-		<center id="ClientDiv-Center-ExChangeLink" class="FOF FO EasingOut_Bottom">
-			<ul>
-				<li>
-					<a href="https://www.aurorast.tk/"><img src="https://www.aurorast.tk/img/favicon.png" width="32px" height="32px "style="border-radius: 50%;">AuroraStudio</a>
-				</li>
-				<li>
-					<a href="https://origamigamer.github.io"><img src="" width="32px" height="32px "style="border-radius: 50%;">Origami's Blog</a>
-				</li>
-			</ul>
-		</center>
-		<video muted="muted" style="display: none;"></video>
-	<!--	<iframe id="NeteaseMusicLoader" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src=""></iframe>-->
-	</ClientDiv>
+<html lang="cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Creakler's Blog</title>
+        <link href="/styles/mainStyle.css" rel="stylesheet">
+        <script src="/js/markdown.js"></script>
+        <script src="/js/eventUtil.js"></script>
+        <script src="/js/navigationBar.js"></script>
+        <script src="/js/main.js"></script>
+    </head>
+    <body>
+        <div id="navigationBar">
+            <tabButton class="navigationBar_li" index="0">&#xE80F</tabButton>
+            <tabButton class="navigationBar_li" index="1">&#xEA37</tabButton>
+            <tabButton class="navigationBar_li" index="3">&#xE779</tabButton>
+            <tabButton class="navigationBar_li inverted_li" index="4">&#xf2b7</tabButton>
+            <tabButton class="navigationBar_li inverted_li" index="5">&#xE713</tabButton>
+        </div>
+        <div id="contextFrame">
+            <markdown data="/pages/important/homePage.md">
+        </div>
+    </body>
 </html>
