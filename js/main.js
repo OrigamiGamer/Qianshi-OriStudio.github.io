@@ -1,4 +1,9 @@
-window.searchObj = funcExtra.getSearchData();
+if(!funcExtra.getSearchData() || !funcExtra.getSearchData().curIndex)
+{
+    location.search = '?curIndex=0'
+}
+window.searchObj = funcExtra.getSearchData()
+
 EventUtil.addHandler(window,'load',() =>{
 
     var imageDom = new Image();
@@ -27,3 +32,10 @@ EventUtil.addHandler(window,'load',() =>{
         markdownDom.innerHTML = converter.makeHtml (returnData)
     }
 });
+EventUtil.addHandler(window,'error',()=>{
+    console.info('Oops, you found a web bug, please tell me how this happened')
+    console.info('恭喜，你发现了一个网页虫子 (bug) ,请麻烦告诉我怎么发生这种情况的')
+    console.info('You can report questions through Github issues, thank you.')
+    console.info("你可以通过 Github issues' 反馈问题, 谢谢 -w-")
+    debugger
+})
